@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -ampI *_
+ls -ampI _*
