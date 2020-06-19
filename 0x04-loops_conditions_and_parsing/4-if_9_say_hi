@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# displays Holberton School 10 times, and ssay Hi in the 9th iteration
+
+str="Holberton School"
+i=0
+while [ $i -le 9 ]; do
+	echo "$str"
+	if [ $i -eq 8 ]; then
+		echo "Hi"
+	fi
+	((i++))
+done
