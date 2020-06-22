@@ -4,7 +4,7 @@
 # In between each iteration of the loop, add a 'sleep 2'
 # Note that I ctrl+c (killed) the Bash script.
 
-while [ 1 ]
+while [ "$true" ]
 do
 	echo "To infinity and beyond"
 	sleep 2
