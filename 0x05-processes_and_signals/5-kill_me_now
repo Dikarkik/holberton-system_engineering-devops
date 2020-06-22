@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Bash script that kills 4-to_infinity_and_beyond process
+# Requirement: You must use kill
+
+kill "$(pgrep -f "bash ./4-to_infinity_and_beyond")"
