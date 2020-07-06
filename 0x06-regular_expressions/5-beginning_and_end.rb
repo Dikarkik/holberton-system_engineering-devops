@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
-# Repetition Token #3
+# Not quite HBTN yet
 
 puts ARGV[0].scan(/^h.n$/).join
