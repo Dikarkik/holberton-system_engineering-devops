@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# command to fix error 'curl: (52) Empty reply from server'
+# accesing with 'curl 0:8080'
+service apache2 start
