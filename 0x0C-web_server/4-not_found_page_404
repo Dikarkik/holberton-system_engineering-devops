@@ -13,6 +13,6 @@ sed -i "30i $new_string" /etc/nginx/sites-available/default
 echo "Ceci n'est pas une page" > sudo tee /var/www/html/404.html
 
 new_string="\\\terror_page 404 /404.html;\n\tlocation = /404.html {\n\t\troot /var/www/html/;\n\t\tinternal;\n\t}"
-sed -i "34i $new_string" /etc/nginx/sites-available/default
+sed -i "34i $new_string" /etc/nginx/sites-enabled/default
 
 sudo service nginx restart
