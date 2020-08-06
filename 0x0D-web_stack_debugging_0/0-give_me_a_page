@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 # command to fix error 'curl: (52) Empty reply from server'
-sudo apt-get install apache2
-echo "Hello Holberton" > /var/www/html/index.html
+# accesing with 'curl 0:8080'
 service apache2 start
