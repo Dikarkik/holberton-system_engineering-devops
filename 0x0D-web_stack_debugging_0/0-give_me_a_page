@@ -3,4 +3,5 @@
 # accesing with 'curl 0:8080'
 
 sudo apt-get install -y apache2
+echo "Hello Holberton" > /var/www/html/index.html
 sudo service apache2 start
