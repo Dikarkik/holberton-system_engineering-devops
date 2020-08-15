@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# 0. Nginx likes port 80
+sudo pkill -f nginx & wait $!
+service nginx start
