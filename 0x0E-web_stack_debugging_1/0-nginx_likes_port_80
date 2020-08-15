@@ -2,4 +2,5 @@
 # 0. Nginx likes port 80
 sed -i "/slisten 80.*/listen 80 default_server;/g" /etc/nginx/sites-available/default
 sed -i "/listen [::]:80.*/listen [::]:80 default_server;/g" /etc/nginx/sites-available/default
+sleep 1
 service nginx restart
