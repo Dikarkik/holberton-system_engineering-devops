@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 # 0. Nginx likes port 80
-sudo pkill -f nginx & wait $!
-service nginx start
+sed -i "/slisten 80.*/listen 80 default_server;/g" /etc/nginx/sites-available/default
+sed -i "/listen [::]:80.*/listen [::]:80 default_server;/g" /etc/nginx/sites-available/default
+service nginx restart
