@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # 0. Nginx likes port 80
-sed -i "/slisten 80.*/listen 80 default_server;/g" /etc/nginx/sites-enabled/default
-sed -i "/slisten [::]:80.*/listen [::]:80 default_server;/g" /etc/nginx/sites-enabled/default
+sed -i "s/listen 8080.*/listen 80 default_server;/" /etc/nginx/sites-enabled/default
+sed -i "22s|.*|\tlisten [::]:80 default_server ipv6only=on;|" /etc/nginx/sites-enabled/default
+sleep 1
 service nginx restart
