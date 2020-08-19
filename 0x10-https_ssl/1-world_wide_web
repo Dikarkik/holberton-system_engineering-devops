@@ -7,7 +7,7 @@
 declare -a subdomains=("www" "lb-01" "web-01" "web-02")
 
 function print_info {
-	dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | tail -1 | awk -v SUBD="$2" '{print "The subdomain", SUBD, "is a", $4, "record and point to", $5}'
+	dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | tail -1 | awk -v SUBD="$2" '{print "The subdomain", SUBD, "is a", $4, "record and points to", $5}'
 }
 
 if [ "$2" ]; then
