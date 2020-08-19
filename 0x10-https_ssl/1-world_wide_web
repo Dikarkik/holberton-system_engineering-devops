@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# display information about subdomains
+# USAGE: ./1-world_wide_web DOMAIN [SUBDOMAIN]
+# When only the parameter domain is provided, display information for its subdomains
+# When passing domain and subdomain parameters, display information for the specified subdomain
+
+declare -a subdomains=("www" "lb-01" "web-01" "web-02")
+
+function print_info {
+	dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | tail -1 | awk -v SUBD="$2" '{print "The subdomain", SUBD, "is a", $4, "record and point to", $5}'
+}
+
+if [ "$2" ]; then
+	# dig "$2.$1" | grep -A1 'ANSWER SECTION:' | awk -v SUBDOM="$2" 'END {print The subdomain SUBDOM is a $2 record and points to $NF}'
+	print_info "$1" "$2"
+elif [ "$1" ]; then
+	for val in "${subdomains[@]}"; do
+		print_info "$1" "$val"
+	done
+else
+	echo "USAGE: ./1-world_wide_web DOMAIN [SUBDOMAIN]"
+fi
