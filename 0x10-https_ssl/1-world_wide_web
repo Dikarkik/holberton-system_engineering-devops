@@ -17,6 +17,4 @@ elif [ "$1" ]; then
 	for val in "${subdomains[@]}"; do
 		print_info "$1" "$val"
 	done
-else
-	echo "USAGE: ./1-world_wide_web DOMAIN [SUBDOMAIN]"
 fi
