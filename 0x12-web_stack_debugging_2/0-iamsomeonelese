@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+if [ -z "$1" ]; then
+	sudo -u root whoami;
+else
+	sudo -u $1 whoami;
+fi
