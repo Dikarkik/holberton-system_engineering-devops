@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 # backup all databases and compress
 
-mysqldump -u root -p "$1" --opt --all-databases > backup.sql
+if [ $1 ]; then
+	mysqldump -u root -p "$1" --opt --all-databases > backup.sql
 
-name=$(date '+%d-%m-%Y')
-tar -czvf "$name.tar.gz" backup.sql
+	name=$(date '+%d-%m-%Y')
+	tar -czvf "$name.tar.gz" backup.sql
+fi
