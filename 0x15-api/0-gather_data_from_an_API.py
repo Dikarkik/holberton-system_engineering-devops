@@ -14,19 +14,20 @@ if __name__ == "__main__":
         sys.exit()
 
     url = 'https://jsonplaceholder.typicode.com/users/'
-    data = json.loads(requests.get(url + sys.argv[1]).text)
+    id = sys.argv[1]
+    data = json.loads(requests.get(url + id).text)
     if not data:
         sys.exit()
 
     name = data.get('name')
-    data = json.loads(requests.get(url + sys.argv[1] + '/todos').text)
+    data = json.loads(requests.get(url + id + '/todos').text)
     todo_done = 0
 
     for todo_task in data:
         if todo_task.get('completed') is True:
             todo_done += 1
 
-    print('Employee' + name + 'is done with tasks({}/{}):'
+    print('Employee ' + name + ' is done with tasks({}/{}):'
           .format(todo_done, len(data)))
 
     for todo_task in data:
