@@ -26,7 +26,7 @@ if __name__ == "__main__":
     username = data.get('username')
     data = json.loads(requests.get(url + id + '/todos').text)
 
-    with open('{}.cvs'.format(id), mode='w', newline='') as file:
+    with open('{}.csv'.format(id), mode='w', newline='') as file:
         writer = csv.writer(file, delimiter=",", quoting=csv.QUOTE_ALL)
         for task in data:
             writer.writerow([id, username, task.get('completed'),

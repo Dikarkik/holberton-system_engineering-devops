@@ -33,7 +33,7 @@ if __name__ == "__main__":
         for todo_task in data:
             tasks.append({'task': todo_task.get('title'),
                          'completed': todo_task.get('completed'),
-                         'username': username})
+                          'username': username})
 
         tasks_all_employees[id] = tasks
 
