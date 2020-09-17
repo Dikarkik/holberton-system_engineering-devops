@@ -25,4 +25,4 @@ def number_of_subscribers(subreddit):
         return 0
 
 if __name__ == "__main__":
-    number_of_subscribers('programming')
+    print("{:d}".format(number_of_subscribers('programming')))
