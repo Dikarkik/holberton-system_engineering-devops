@@ -20,16 +20,16 @@ import requests
 
 
 def top_ten(subreddit):
-    headers = {'User-Agent': 'Diana', 'limit': 10}
-    url = 'https://www.reddit.com/r/' + subreddit + '/hot.json'
+    headers = {'user-agent': 'fake_user_agent'}
+    url = 'https://www.reddit.com/r/' + subreddit + '/hot.json?limit=10'
     request = requests.get(url, headers=headers, allow_redirects=False)
 
     if request.status_code == 200:
-        data = json.loads(request.text)
-        for post in data['data']['children']:
-            print(post['data']['title'])
+        posts = json.loads(request.text)['data']['children']
+        for post in posts:
+            print(post.get('data').get('title'))
     else:
-        return None
+        print('None')
 
 
 if __name__ == "__main__":
